@@ -27,6 +27,9 @@ run/main_scene="res://World/Levels/MainMenu.tscn"
 
 SceneChanger="*res://SceneChanger.tscn"
 Globals="*res://GLOBALS.tscn"
+Chain="*res://Chain/Chain.tscn"
+Link="*res://Chain/Link.tscn"
+Loop="*res://Chain/Loop.tscn"
 
 [display]
 
