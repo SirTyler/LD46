@@ -10,3 +10,6 @@ data_*/
 LD46.exe
 LD46.pck
 LD46.zip
+*.zip
+*.exe
+*.pck
