@@ -13,7 +13,7 @@ func set_player(_player):
 	player = _player
 
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	player.begin_transition()
 	stored_position = player.camera.position
 	
@@ -37,14 +37,14 @@ func _on_area_entered(area):
 	tween.connect("tween_started", self, "tween_start")
 	tween.start()
 
-func tween_start(obj, key):
+func tween_start(_obj, _key):
 	player.camera.set_enable_follow_smoothing(false)
 	#player.camera.set_limit(MARGIN_BOTTOM, 10000)
 	player.camera.set_limit(MARGIN_RIGHT, 10000)
 	player.camera.set_limit(MARGIN_LEFT, -10000)
 	#player.camera.set_limit(MARGIN_TOP, -10000)
 
-func tween_done(obj, key):
+func tween_done(_obj, _key):
 	player.camera.set_enable_follow_smoothing(true)
 	player.camera.set_limit(MARGIN_BOTTOM, camera_bounds[2] + transition_from_y)
 	player.camera.set_limit(MARGIN_RIGHT, camera_bounds[3] + transition_from_x)

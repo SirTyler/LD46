@@ -10,7 +10,7 @@ var cur_delay = 0
 var move_delay = 0
 var move_to_point = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var vel = Vector2.ZERO
 	cur_delay += 1
 	if cur_delay > delay:

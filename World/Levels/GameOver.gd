@@ -11,11 +11,13 @@ var dir = false
 func _ready():
 	randomize()
 	timer.connect("timeout", self, "timer_done")
-	timer_done()
+	timer.set_wait_time(5)
+	timer.start()
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("jump"):
 		SceneChanger.change_scene("res://World/Levels/Level0.tscn")
+		Globals.HEALTH = Globals.HEALTH_MAX
 
 func _new_rand_time():
 	return int(rand_range(rand_min, rand_max))

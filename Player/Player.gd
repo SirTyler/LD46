@@ -47,7 +47,8 @@ func _physics_process(delta):
 			vel = move_and_slide_with_snap(vel, snap, FLOOR_NORMAL, true)
 			animState.travel("idle")
 	elif is_dead:
-		pass
+		SceneChanger.change_scene("res://World/Levels/GameOver.tscn")
+		is_dead = false
 
 func begin_transition():
 	emit_signal("transition_start")

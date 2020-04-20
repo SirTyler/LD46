@@ -133,17 +133,26 @@ position = Vector2( 336.592, 168.711 )
 [node name="Position2D" parent="YSort/Traps/Saw" index="0"]
 position = Vector2( 128, 0 )
 
+[node name="AnimatedSprite" parent="YSort/Traps/Saw/Control" index="0"]
+frame = 1
+
 [node name="Saw2" parent="YSort/Traps" instance=ExtResource( 2 )]
 position = Vector2( 154, -24.5 )
 
 [node name="Position2D" parent="YSort/Traps/Saw2" index="0"]
 position = Vector2( 90, 0 )
 
+[node name="AnimatedSprite" parent="YSort/Traps/Saw2/Control" index="0"]
+frame = 1
+
 [node name="Saw3" parent="YSort/Traps" instance=ExtResource( 2 )]
 position = Vector2( 334, -24.5 )
 
 [node name="Position2D" parent="YSort/Traps/Saw3" index="0"]
 position = Vector2( -90, 0 )
+
+[node name="AnimatedSprite" parent="YSort/Traps/Saw3/Control" index="0"]
+frame = 1
 
 [node name="Spike" parent="YSort/Traps" instance=ExtResource( 4 )]
 position = Vector2( 576, 168 )

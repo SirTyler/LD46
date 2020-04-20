@@ -15,8 +15,10 @@ export(float) var to_scale = 1
 
 signal ally_created(ally)
 
+onready var anchor = $Anchor
+
 func _ready():
-	var parent = $Anchor
+	var parent = anchor
 	for _i in range(length):
 		var child = add_loop(parent)
 		add_link(parent, child)
@@ -30,7 +32,7 @@ func _ready():
 	$Anchor.get_child(1).visible = anchor_visible
 
 func add_loop(parent):
-	var loop = LOOP.instance()
+	var loop = LOOP.instance();
 	loop.position = parent.position
 	loop.position.y += spawn_dir.y * (18 * to_scale)
 	loop.position.x += spawn_dir.x * (18 * to_scale)
@@ -42,7 +44,7 @@ func add_loop(parent):
 	return loop
 
 func add_ally(parent):
-	var ally = ALLY.instance()
+	var ally = ALLY.instance();
 	ally.position = parent.position
 	ally.position.y += spawn_dir.y * (18 * to_scale)
 	ally.position.x += spawn_dir.x * (18 * to_scale )
@@ -51,7 +53,7 @@ func add_ally(parent):
 	return ally
 	
 func add_dummy(parent):
-	var dummy = DUMMY.instance()
+	var dummy = DUMMY.instance();
 	dummy.position = parent.position
 	dummy.position.y += spawn_dir.y * (18 * to_scale )
 	dummy.position.x += spawn_dir.x * (18 * to_scale)
@@ -59,7 +61,7 @@ func add_dummy(parent):
 	return dummy
 
 func add_link(parent, child):
-	var pin = LINK.instance()
+	var pin = LINK.instance();
 	pin.node_a = parent.get_path()
 	pin.node_b = child.get_path()
 	parent.add_child(pin)
