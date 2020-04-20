@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Trap/Spike.png" type="Texture" id=1]
+[ext_resource path="res://Colliders/HitBox.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( -0.112, -28.373, 13.226, -0.19, -14.146, -0.19 )
+
+[node name="Spike" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -0.112206, -28.3735, 13.2257, -0.189869, -14.146, -0.189869 )
+
+[node name="HitBox" parent="." instance=ExtResource( 2 )]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource( 1 )
+
+[editable path="HitBox"]

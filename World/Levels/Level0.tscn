@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://World/tileset/tileset_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/background.png" type="Texture" id=7]
+[ext_resource path="res://04B_03.tres" type="DynamicFont" id=11]
+[ext_resource path="res://World/clutter/Torch.tscn" type="PackedScene" id=13]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
+
+[node name="Level1" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[node name="Door" parent="." instance=ExtResource( 6 )]
+position = Vector2( 608, 168 )
+collision_mask = 2
+scene_to_change_path = "res://World/Levels/Level1.tscn"
+traversable = true
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, -8 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1, 47, 0, -65536, 47, 1, -65535, 47, 1, -65534, 47, 1, -65533, 47, 1, -65532, 47, 1, -65531, 47, 1, -65530, 47, 1, -65529, 47, 1, -65528, 47, 1, -65527, 47, 1, -65526, 47, 1, -65525, 47, 1, -65524, 47, 1, -65523, 47, 1, -65522, 47, 1, -65521, 47, 1, -65520, 47, 1, -65519, 47, 1, -65518, 47, 1, -65517, 47, 1, -65516, 47, 1, -65515, 47, 1, -65514, 47, 1, -65513, 47, 1, -65512, 47, 1, -65511, 47, 1, -65510, 47, 1, -65509, 47, 1, -65508, 47, 1, -65507, 47, 1, -65506, 47, 1, -65505, 47, 1, -65504, 47, 1, -65503, 47, 1, -65502, 47, 1, -65501, 47, 1, -65500, 47, 1, -65499, 47, 1, -65498, 47, 1, -65497, 47, 1, -65496, 47, 2, 65535, 47, 65536, 0, 47, 65541, 1, 47, 131073, 2, 47, 131073, 3, 47, 131073, 4, 47, 131073, 5, 47, 131073, 6, 47, 131073, 7, 47, 131073, 8, 47, 131073, 9, 47, 131073, 10, 47, 131073, 11, 47, 131073, 12, 47, 131073, 13, 47, 131073, 14, 47, 131073, 15, 47, 131073, 16, 47, 131073, 17, 47, 65542, 18, 47, 65537, 19, 47, 65541, 20, 47, 131073, 21, 47, 131073, 22, 47, 131073, 23, 47, 131073, 24, 47, 131073, 25, 47, 131073, 26, 47, 131073, 27, 47, 131073, 28, 47, 131073, 29, 47, 131073, 30, 47, 131073, 31, 47, 131073, 32, 47, 131073, 33, 47, 131073, 34, 47, 131073, 35, 47, 131073, 36, 47, 131073, 37, 47, 65542, 38, 47, 65537, 39, 47, 65537, 40, 47, 65538, 131071, 47, 65536, 65536, 47, 65538, 65553, 47, 131072, 65554, 47, 65542, 65555, 47, 65538, 65573, 47, 65536, 65574, 47, 65537, 65575, 47, 65537, 65576, 47, 65538, 196607, 47, 65536, 131072, 47, 65538, 131090, 47, 65536, 131091, 47, 65538, 131109, 47, 65536, 131110, 47, 65537, 131111, 47, 65537, 131112, 47, 65538, 262143, 47, 65536, 196608, 47, 65538, 196626, 47, 65536, 196627, 47, 65538, 196645, 47, 65536, 196646, 47, 65537, 196647, 47, 65537, 196648, 47, 65538, 327679, 47, 65536, 262144, 47, 65538, 262162, 47, 131072, 262163, 47, 131074, 262181, 47, 65536, 262182, 47, 65537, 262183, 47, 65537, 262184, 47, 65538, 393215, 47, 65536, 327680, 47, 65538, 327717, 47, 65536, 327718, 47, 65537, 327719, 47, 65537, 327720, 47, 65538, 458751, 47, 65536, 393216, 47, 65538, 393253, 47, 131072, 393254, 47, 131073, 393255, 47, 65542, 393256, 47, 65538, 524287, 47, 65536, 458752, 47, 65538, 458791, 47, 65536, 458792, 47, 65538, 589823, 47, 65536, 524288, 47, 65538, 524313, 47, 0, 524314, 47, 2, 524327, 47, 65536, 524328, 47, 65538, 655359, 47, 65536, 589824, 47, 65538, 589849, 47, 65536, 589850, 47, 131077, 589851, 47, 2, 589863, 47, 65536, 589864, 47, 65538, 720895, 47, 65536, 655360, 47, 65538, 655385, 47, 65536, 655386, 47, 65537, 655387, 47, 131077, 655388, 47, 2, 655399, 47, 65536, 655400, 47, 65538, 786431, 47, 65536, 720896, 47, 131077, 720897, 47, 1, 720898, 47, 1, 720899, 47, 1, 720900, 47, 1, 720901, 47, 1, 720902, 47, 1, 720903, 47, 1, 720904, 47, 1, 720905, 47, 1, 720906, 47, 1, 720907, 47, 1, 720908, 47, 1, 720909, 47, 1, 720910, 47, 1, 720911, 47, 1, 720912, 47, 1, 720913, 47, 1, 720914, 47, 1, 720915, 47, 1, 720916, 47, 1, 720917, 47, 1, 720918, 47, 1, 720919, 47, 1, 720920, 47, 1, 720921, 47, 131078, 720922, 47, 65537, 720923, 47, 65537, 720924, 47, 131077, 720925, 47, 1, 720926, 47, 1, 720927, 47, 1, 720928, 47, 1, 720929, 47, 1, 720930, 47, 1, 720931, 47, 1, 720932, 47, 1, 720933, 47, 1, 720934, 47, 1, 720935, 47, 131078, 720936, 47, 65538, 851967, 47, 131072, 786432, 47, 131073, 786433, 47, 131073, 786434, 47, 131073, 786435, 47, 131073, 786436, 47, 131073, 786437, 47, 131073, 786438, 47, 131073, 786439, 47, 131073, 786440, 47, 131073, 786441, 47, 131073, 786442, 47, 131073, 786443, 47, 131073, 786444, 47, 131073, 786445, 47, 131073, 786446, 47, 131073, 786447, 47, 131073, 786448, 47, 131073, 786449, 47, 131073, 786450, 47, 131073, 786451, 47, 131073, 786452, 47, 131073, 786453, 47, 131073, 786454, 47, 131073, 786455, 47, 131073, 786456, 47, 131073, 786457, 47, 131073, 786458, 47, 131073, 786459, 47, 131073, 786460, 47, 131073, 786461, 47, 131073, 786462, 47, 131073, 786463, 47, 131073, 786464, 47, 131073, 786465, 47, 131073, 786466, 47, 131073, 786467, 47, 131073, 786468, 47, 131073, 786469, 47, 131073, 786470, 47, 131073, 786471, 47, 131073, 786472, 47, 131074 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Torch" parent="." instance=ExtResource( 13 )]
+position = Vector2( 304, 56 )
+
+[node name="Torch2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 608.292, 80 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_offset = Vector2( 0, -180 )
+motion_mirroring = Vector2( 320, 180 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 7 )
+centered = false
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="TutorialText" type="Node" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TutorialText"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 288.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 360, 32 )
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+text = "Escape your cell, but never lose your little light"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TutorialText"]
+margin_left = 320.0
+margin_top = 8.0
+margin_right = 592.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 360, 32 )
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+text = "JUMP with SPACE BAR"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="TutorialText"]
+margin_left = 16.0
+margin_top = 72.0
+margin_right = 288.0
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( 360, 32 )
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+text = "W A S D for movement"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 103.17, 141.489 )
+JUMP_SPEED = 150
+JUMP_HEIGHT = 125
+
+[node name="Camera2D" parent="Player/Position2D" index="0"]
+limit_top = 0
+limit_right = 640
+
+[node name="AnimationTree" parent="Player" index="8"]
+parameters/playback = SubResource( 1 )
+parameters/idle/blend_position = 0
+[connection signal="area_entered" from="Door" to="." method="_on_Door_area_entered"]
+
+[editable path="Door"]
+
+[editable path="Player"]
